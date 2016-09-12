@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: ASICS Noosa
+  category: 1
+  price: 1.5
+
+two:
+  name: Zoot Performance
+  category: 1
+  price: 1.5
+
+three:
+  name: TYR google glass
+  category: 2
+  price: 2
