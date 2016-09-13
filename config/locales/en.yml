@@ -24,3 +24,6 @@ en:
   login_user_not_found: "User does not exists"
   login_password_incorret: "User does not exists"
   logout_successful: "Logout successful"
+  updated_at: "Updated at"
+  product: "Product"
+  status: "Status"
