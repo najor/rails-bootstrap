@@ -23,3 +23,4 @@ en:
   hello: "Hello world"
   login_user_not_found: "User does not exists"
   login_password_incorret: "User does not exists"
+  logout_successful: "Logout successful"
