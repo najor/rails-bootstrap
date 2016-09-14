@@ -6,7 +6,4 @@ class OrderService
       .order("#{sort_column} #{sort_direction}")
   end
 
-  def self.get_customer_category
-
-  end
 end

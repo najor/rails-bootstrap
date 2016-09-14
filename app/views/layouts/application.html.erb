@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rail ecommerce</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Rails e-commerce</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if session[:user_id] %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <%= link_to 'My Rails', home_index_path, class: 'navbar-brand' %>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li class="<%= controller_name == 'home' ? 'active' : '' %>">
+          <%= link_to I18n.t('home'), home_index_path %>
+        </li>
+        <li class="<%= controller_name == 'customer' ? 'active' : '' %>">
+          <%= link_to I18n.t('customers'), customer_index_path %>
+        </li>
+      </ul>
+
+      <div class="nav navbar-nav navbar-right">
+        <%= link_to I18n.t('logout'), sessions_logout_path, class: 'navbar-brand', style: 'color: blue' %>
+      </div>
+
+    </div>
+  </nav>
+<% end %>
 
 <%= yield %>
 
