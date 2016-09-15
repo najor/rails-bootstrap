@@ -1,9 +1,19 @@
 require 'test_helper'
 
 class HashTest < ActiveSupport::TestCase
-
   def setup
-    @hash_level = {value: '0', one: {value: '1', two: {value: '2', three: {value: '3'}}}}
+    @hash_level = {
+      value: '0',
+      one: {
+        value: '1',
+        two: {
+          value: '2',
+          three: {
+            value: '3'
+          }
+        }
+      }
+    }
   end
 
   def test_hash_zero_level
@@ -25,5 +35,4 @@ class HashTest < ActiveSupport::TestCase
   def test_not_exists_attribute
     assert_equal nil, @hash_level.dig(:one, :no_exist, :three, :value)
   end
-
 end

@@ -1,5 +1,5 @@
+# Session controller manages the login and logout or customers
 class SessionsController < ApplicationController
-
   def login
     redirect_to controller: 'home' if session[:user_id]
   end
@@ -16,9 +16,9 @@ class SessionsController < ApplicationController
       session[:user_id] = customer.id
       redirect_to controller: 'home'
     else
-      flash[:error] = customer ? I18n.t('login_password_incorret') : I18n.t('login_user_not_found')
+      message = customer ? 'login_password_incorrect' : 'login_user_not_found'
+      flash[:error] = I18n.t(message)
       redirect_to '/'
     end
   end
-
 end

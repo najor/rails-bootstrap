@@ -3,24 +3,29 @@
 one:
   product_id: 1
   customer_id: 1
+  created_at: <%= Date.parse('29-06-2015') %>
   status: 1
 
 two:
   product_id: 1
   customer_id: 2
+  created_at: <%= Date.parse('29-06-2015') %>
   status: 1
 
 three:
   product_id: 1
   customer_id: 2
+  created_at: <%= Date.parse('21-06-2015') %>
   status: 1
 
 four:
   product_id: 2
   customer_id: 1
+  created_at: <%= Date.parse('20-06-2015') %>
   status: 0
 
 five:
   product_id: 3
   customer_id: 1
+  created_at: <%= Date.parse('29-06-2015') %>
   status: 2

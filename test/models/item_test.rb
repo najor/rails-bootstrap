@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ItemTest < ActiveSupport::TestCase
-
   def test_item_new
     item = Item.new(name: 'Item 1')
     assert item.save

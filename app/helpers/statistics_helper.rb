@@ -1,0 +1,3 @@
+# StatisticsHelper
+module StatisticsHelper
+end

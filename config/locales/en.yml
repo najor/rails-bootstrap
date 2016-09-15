@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
   login_user_not_found: "User does not exists"
-  login_password_incorret: "User does not exists"
+  login_password_incorrect: "Password is not correct"
   logout_successful: "Logout successful"
   updated_at: "Updated at"
   product: "Product"
@@ -35,3 +35,4 @@ en:
   category_id: "Category Id"
   category_name: "Category"
   customers: "Customers"
+  statistics: "Statistics"

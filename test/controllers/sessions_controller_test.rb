@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
-
   def test_should_get_login
     get :login
     assert_response :success
@@ -20,8 +19,7 @@ class SessionsControllerTest < ActionController::TestCase
   end
 
   def test_login_attempt_params
-    post :login_attempt, {email: 'joseph@gmail.com', pass: '987654321'}
+    post :login_attempt, email: 'joseph@gmail.com', pass: '987654321'
     assert_redirected_to controller: 'home'
   end
-
 end
