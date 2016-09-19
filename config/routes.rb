@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'customer/index'
   get 'statistics/index'
+  get 'statistics/data_range_date'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

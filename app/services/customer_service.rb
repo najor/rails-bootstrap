@@ -3,7 +3,7 @@ class CustomerService
   def self.find_customer_category_sql
     ActiveRecord::Base.connection.execute(
       'select c.id as customer_id, c.first_name, ' \
-      'cat.id as category_id, cat.name as category_name' \
+      'cat.id as category_id, cat.name as category_name ' \
       'from orders o, customers c, products p, categories cat ' \
       'where o.customer_id = c.id ' \
       'and o.product_id = p.id ' \

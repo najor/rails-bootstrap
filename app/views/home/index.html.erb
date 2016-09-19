@@ -1,9 +1,12 @@
 <div class="home-main">
+  <h3 class="text-center">
+    <%= I18n.t('my_orders') %>
+  </h3>
   <div class="table-responsive">
     <table class="table table-striped table-hover">
       <tr>
         <th><%= sortable 'status', I18n.t('status') %></th>
-        <th><%= sortable 'updated_at', I18n.t('updated_at') %></th>
+        <th><%= sortable 'updated_at', I18n.t('date') %></th>
         <th><%= I18n.t('product') %></th>
       </tr>
       <% @orders.each do |order| %>

@@ -11,10 +11,12 @@ class HomeController < ApplicationController
   private
 
   def sort_column
-    Order.column_names.include?params[:sort] ? params[:sort] : 'updated_at'
+    sort = Order.column_names.include? params[:sort]
+    sort ? params[:sort] : 'updated_at'
   end
 
   def sort_direction
-    %w([asc desc]).include?params[:direction] ? params[:direction] : 'desc'
+    direction = %w([asc desc]).include? params[:direction]
+    direction ? params[:direction] : 'desc'
   end
 end

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap3-datetimepicker-rails'
+gem 'momentjs-rails'
 gem 'rubocop', require: false
 gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

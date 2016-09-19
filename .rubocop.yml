@@ -6,6 +6,7 @@ AllCops:
     - 'lib/**/*'
     - 'log/**/*'
     - 'public/**/*'
+    - 'test/test_helper.rb'
 
 Metrics/MethodLength:
   CountComments: false  # count full line comments?

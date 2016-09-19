@@ -1,1 +1,104 @@
-<h1>Statistics</h1>
+<div class="home-main">
+
+  <h1 class="text-center">Customer and Categories</h1>
+  <div class="table-responsive">
+    <table id="customer-category" class="table table-striped table-hover">
+      <tr>
+        <th><%= I18n.t('customer_id') %></th>
+        <th><%= I18n.t('first_name') %></th>
+        <th><%= I18n.t('category_id') %></th>
+        <th><%= I18n.t('category_name') %></th>
+      </tr>
+      <% @customers_categories.each do |item| %>
+        <tr>
+          <td><%= item['customer_id'] %></td>
+          <td><%= item['first_name'] %></td>
+          <td><%= item['category_id'] %></td>
+          <td><%= item['category_name'] %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="container-fluid">
+    <h1 class="text-center">Weekly statistics</h1>
+    <div class="row">
+      <div class="col-md-3">
+        <div id="weeklyDatePicker">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="table-responsive">
+          <table id="products-sells" class="table table-striped table-hover">
+            <thead>
+            <tr>
+              <th><%= I18n.t('product') %></th>
+              <th><%= I18n.t('sells') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="table-responsive">
+          <table id="items-sells" class="table table-striped table-hover">
+            <thead>
+            <tr>
+              <th><%= I18n.t('item') %></th>
+              <th><%= I18n.t('sells') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="table-responsive">
+          <table id="orders-customers" class="table table-striped table-hover">
+            <thead>
+            <tr>
+              <th><%= I18n.t('orders') %></th>
+              <th><%= I18n.t('customers') %></th>
+              <th><%= I18n.t('percentage') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center">Monthly statistics</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div id="monthlyDatePicker">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="table-responsive">
+          <table id="new-recurring-customers" class="table table-striped table-hover">
+            <thead>
+            <tr>
+              <th><%= I18n.t('month') %></th>
+              <th><%= I18n.t('recurring') %></th>
+              <th><%= I18n.t('new') %></th>
+              <th><%= I18n.t('total') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= form_tag(:action => 'index') do %>
+    <%= hidden_field_tag('initial_date') %>
+    <%= hidden_field_tag('end_date') %>
+  <% end %>
+
+</div>

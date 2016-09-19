@@ -1,22 +1,2 @@
 
-<div class="home-main">
-  <h2>Which categories buy the customers from?</h2>
-  <div class="table-responsive">
-    <table class="table table-striped table-hover">
-      <tr>
-        <th><%= I18n.t('customer_id') %></th>
-        <th><%= I18n.t('first_name') %></th>
-        <th><%= I18n.t('category_id') %></th>
-        <th><%= I18n.t('category_name') %></th>
-      </tr>
-      <% @customers_categories.each do |item| %>
-        <tr>
-          <td><%= item['customer_id'] %></td>
-          <td><%= item['first_name'] %></td>
-          <td><%= item['category_id'] %></td>
-          <td><%= item['category_name'] %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
+
