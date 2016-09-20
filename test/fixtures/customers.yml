@@ -13,3 +13,11 @@ two:
   last_name: Kein
   email: laura@gmail.com
   password_digest: $2a$06$kPU4bu.ixDIDUTXQL5Ctx.KkG2uGcmV1lqCJDHdOI.iZ8twqa.rlq
+
+three:
+  id: 3
+  first_name: Peter
+  last_name: Parker
+  email: spiderman@gmail.com
+  password_digest: $2a$06$kPU4bu.ixDIDUTXQL5Ctx.KkG2uGcmV1lqCJDHdOI.iZ8twqa.rlq
+  created_at: <%= Date.parse('02-06-2015') %>

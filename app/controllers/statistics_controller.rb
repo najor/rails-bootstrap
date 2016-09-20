@@ -2,6 +2,7 @@
 class StatisticsController < ApplicationController
   def index
     @customers_categories = CustomerService.find_customer_category_sql
+    @customers = CustomerService.customers_new_and_recurring
   end
 
   def data_range_date
@@ -12,6 +13,7 @@ class StatisticsController < ApplicationController
     orders_customer_count = OrderService.get_orders_customer_percentage(initial_date, end_date)
 
     count_orders = Order.where(:orders.created_at => initial_date.beginning_of_day..end_date.end_of_day).count
+
     render json: {
       products: products.map { |prod, count| { name: prod.name, count: count } },
       items: items.map { |item, count| { name: item.name, count: count } },

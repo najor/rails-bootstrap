@@ -39,13 +39,6 @@ ready = ->
     loadWeeklyData(e.date)
   )
 
-  $("#monthlyDatePicker").datetimepicker({
-      format: 'MM/YYYY',
-      inline: true,
-  }).on('dp.change', (e) ->
-#    loadWeeklyData(e.date)
-  )
-
   loadWeeklyData(moment(localStorage.getItem("lastDate"), DATE_FORMAT))
   $('td.day.active').parent().css('background-color', '#337ab7')
 
