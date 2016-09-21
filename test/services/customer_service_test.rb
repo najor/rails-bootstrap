@@ -13,7 +13,7 @@ class CustomerServiceTest < ActiveSupport::TestCase
     customers = CustomerService.customers_new_and_recurring
 
     assert_equal 2, customers.size
-    assert_equal 2, customers['06/2015'][:recurrences]
-    assert_equal 1, customers['06/2015'][:news]
+    assert_equal 2, customers['06/2015']['recurrences']
+    assert_equal 1, customers['06/2015']['news']
   end
 end

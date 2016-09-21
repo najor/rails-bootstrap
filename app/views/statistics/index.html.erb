@@ -88,9 +88,9 @@
             <% @customers.each do |key, item| %>
               <tr>
                 <td><%= key %></td>
-                <td><%= item[:recurrences] %></td>
-                <td><%= item[:news] %></td>
-                <td><%= item[:recurrences] + item[:news] %></td>
+                <td><%= item['recurrences'] %></td>
+                <td><%= item['news'] %></td>
+                <td><%= item['recurrences'] + item['news'] %></td>
               </tr>
             <% end %>
             </tbody>
