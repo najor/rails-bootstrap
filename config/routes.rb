@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :customers
 
   devise_scope :customer do
-    authenticated :customer do
+    authenticate :customer do
       root 'home#index'
       get 'home/home'
       post 'sessions/login_attempt'
