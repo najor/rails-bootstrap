@@ -1,10 +1,11 @@
 # Home: main page for the customer
 class HomeController < ApplicationController
+  before_action :authenticate_customer!
   helper_method :sort_column, :sort_direction
 
   def index
     @orders = OrderService.get_orders_by_customer_id(
-      session[:user_id], sort_column, sort_direction
+      current_customer.id, sort_column, sort_direction
     )
   end
 

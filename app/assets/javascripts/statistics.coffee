@@ -30,11 +30,15 @@ loadWeeklyData = (date) ->
 
 
 ready = ->
+  savedDate = localStorage.getItem("lastDate")
+  if (savedDate == null || !savedDate.match(/\d+-\d+-\d+/))
+    savedDate = moment(new Date()).format(DATE_FORMAT)
+
   $("#weeklyDatePicker").datetimepicker({
     format: DATE_FORMAT,
     calendarWeeks: true,
     inline: true,
-    defaultDate: moment(localStorage.getItem("lastDate"), DATE_FORMAT)
+    defaultDate: moment(savedDate, DATE_FORMAT)
   }).on('dp.change', (e) ->
     loadWeeklyData(e.date)
   )

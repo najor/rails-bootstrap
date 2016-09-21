@@ -17,7 +17,7 @@ class OrderService
   def self.get_items_sold_date_range(initial_date, end_date)
     ProductItem
       .joins('JOIN orders ON product_items.product_id = orders.product_id')
-      .where(:orders.created_at => initial_date.beginning_of_day..end_date.end_of_day)
+      .where('orders.created_at' => initial_date.beginning_of_day..end_date.end_of_day)
       .group(:item)
       .size
   end
@@ -29,7 +29,7 @@ class OrderService
       'from orders ' \
       "where orders.created_at between '#{initial_date}' and '#{end_date}' " \
       'group by orders.customer_id' \
-      ') group by cust_id'
+      ') group by cust_id '
     )
   end
 end

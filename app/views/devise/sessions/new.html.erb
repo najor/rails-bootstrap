@@ -5,7 +5,8 @@
       <p>This is an example of how to implement a basic e-commerce with Rails</p>
       <div class="text-center">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">Login</button>
-        <button type="button" class="btn btn-primary">Sign up</button>
+        <%= link_to I18n.t('sign_up'), '/customers/sign_up', class: 'btn btn-info' %>
+        <%= link_to I18n.t('forget_password'), '/customers/password/new', class: 'btn btn-link' %>
       </div>
     </div>
   </div>
@@ -18,20 +19,22 @@
 </div>
 
 
-
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
       <h1>Login to Your Account</h1><br>
-      <%= form_tag(:action => 'login_attempt') do %>
-        <%= text_field('email', nil, placeholder: 'Email') %>
-        <%= password_field_tag('pass', nil, placeholder: 'Password') %>
-        <%= submit_tag('Log In', class: 'login loginmodal-submit') %>
-      <% end %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= f.text_field :email, autofocus: true %>
+        <%= f.password_field :password, autocomplete: "off", class: 'login loginmodal-submit' %>
+        <%= f.submit I18n.t('login'), class: 'login loginmodal-submit' %>
 
-      <div class="login-help">
-        <a href="#">Register</a> - <a href="#">Forgot Password</a>
-      </div>
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+      <% end %>
     </div>
   </div>
 </div>

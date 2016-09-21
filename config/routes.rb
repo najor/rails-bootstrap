@@ -1,15 +1,25 @@
 Rails.application.routes.draw do
-  get 'home/home'
 
-  root 'sessions#login'
+  devise_for :customers
 
-  post 'sessions/login_attempt'
-  get 'sessions/login'
-  get 'sessions/logout'
-  get 'home/index'
-  get 'customer/index'
-  get 'statistics/index'
-  get 'statistics/data_range_date'
+  devise_scope :customer do
+    authenticated :customer do
+      root 'home#index'
+      get 'home/home'
+      post 'sessions/login_attempt'
+      get 'sessions/login'
+      get 'sessions/logout'
+      get 'home/index'
+      get 'customer/index'
+      get 'statistics/index'
+      get 'statistics/data_range_date'
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: 'unauthenticated_root'
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

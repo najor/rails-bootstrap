@@ -12,7 +12,7 @@ class StatisticsController < ApplicationController
     items = OrderService.get_items_sold_date_range(initial_date, end_date)
     orders_customer_count = OrderService.get_orders_customer_percentage(initial_date, end_date)
 
-    count_orders = Order.where(:orders.created_at => initial_date.beginning_of_day..end_date.end_of_day).count
+    count_orders = Order.where('orders.created_at' => initial_date.beginning_of_day..end_date.end_of_day).count
 
     render json: {
       products: products.map { |prod, count| { name: prod.name, count: count } },

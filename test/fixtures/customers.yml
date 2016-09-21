@@ -6,6 +6,7 @@ one:
   last_name: Smith
   email: joseph@gmail.com
   password_digest: $2a$06$kPU4bu.ixDIDUTXQL5Ctx.KkG2uGcmV1lqCJDHdOI.iZ8twqa.rlq
+  encrypted_password: $2a$06$kPU4bu.ixDIDUTXQL5Ctx.KkG2uGcmV1lqCJDHdOI.iZ8twqa.rlq
 
 two:
   id: 2

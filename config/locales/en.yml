@@ -48,3 +48,6 @@ en:
   recurring: "Recurring"
   new: "New"
   total: "Total"
+  login: "Log in"
+  sign_up: "Sign up"
+  forget_password: "Forgot your password"

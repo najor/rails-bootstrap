@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
 gem 'rubocop', require: false
